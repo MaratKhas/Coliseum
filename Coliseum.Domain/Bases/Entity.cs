@@ -17,19 +17,19 @@ namespace Coliseum.Domain.Bases
         /// <value>The domain events.</value>
         public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents;
 
-        public void AddDomainEvent(IDomainEvent eventItem)
+        protected void AddDomainEvent(IDomainEvent eventItem)
         {
             _domainEvents.Add(eventItem);
         }
 
         // Метод для удаления доменного события
-        public void RemoveDomainEvent(IDomainEvent eventItem)
+        protected void RemoveDomainEvent(IDomainEvent eventItem)
         {
             _domainEvents.Remove(eventItem);
         }
 
         // Метод для очистки всех доменных событий
-        public void ClearDomainEvents()
+        protected void ClearDomainEvents()
         {
             _domainEvents.Clear();
         }

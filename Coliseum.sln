@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.WebApi", "Coliseum.Server\Coliseum.WebApi.csproj", "{022FDE9C-5B92-4EB4-AAA3-66CC9330714B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3} = {2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{213FE120-78A2-4CDC-82D1-FEF74579D98C}"
 EndProject
@@ -18,6 +21,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Domain", "Coliseum.Domain\Coliseum.Domain.csproj", "{AA0C7608-5EDC-4A92-B4F1-8BBC5FDD9E6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Infrastructure", "Coliseum.Infrastructure\Coliseum.Infrastructure.csproj", "{6695699C-909C-4F55-B887-D85F3B86DAF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3} = {2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{026F9C1C-4A72-4A46-893E-EA158795D2B5}"
 EndProject

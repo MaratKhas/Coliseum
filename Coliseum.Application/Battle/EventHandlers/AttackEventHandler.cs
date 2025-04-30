@@ -1,18 +1,15 @@
 ﻿using Coliseum.Domain.Events.BattleEvents;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Coliseum.Application.Battle.EventHandlers
 {
     public class AttackEventHandler : INotificationHandler<AttackEvent>
     {
-        public Task Handle(AttackEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(AttackEvent notification, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var message = $"атакующий {notification.AttackerId} получающий урон {notification.TargetId} урон {notification.Damage} дата {notification.EventDate}";
+            Debug.WriteLine(message);
         }
     }
 }

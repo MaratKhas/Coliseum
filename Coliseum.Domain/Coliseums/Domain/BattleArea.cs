@@ -4,11 +4,11 @@ using Coliseum.Domain.Events.BattleEvents;
 
 namespace Modules.Coliseums.Domain.Coliseums.Domain
 {
-    public class Coliseum : Entity
+    public class BattleArea : Entity
     {
-        private readonly List<BaseWarrior> _leftWarriors;
+        private readonly List<BaseWarrior> _leftWarriors = new();
 
-        private readonly List<BaseWarrior> _rightWarriors;
+        private readonly List<BaseWarrior> _rightWarriors = new();
 
         private BattleState _state = BattleState.NotStarted;
 
@@ -16,14 +16,14 @@ namespace Modules.Coliseums.Domain.Coliseums.Domain
         public IReadOnlyList<BaseWarrior> RightWarriors => _rightWarriors.AsReadOnly();
         public BattleState State => _state;
 
-        protected Coliseum()
+        protected BattleArea()
         {
             Id = Guid.NewGuid();
         }
 
-        public static Coliseum Create()
+        public static BattleArea Create()
         {
-            return new Coliseum();
+            return new BattleArea();
         }
 
         public void AddWarriorsToLeftWarriors(IEnumerable<BaseWarrior> warriors)

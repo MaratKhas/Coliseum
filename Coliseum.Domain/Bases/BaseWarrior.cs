@@ -7,8 +7,9 @@ namespace Coliseum.Domain.Bases
 {
     public abstract class BaseWarrior : Entity, IDamageable
     {
-        protected BaseWarrior()
+        public BaseWarrior(int maxHealth)
         {
+            MaxHealth = maxHealth;
             _health = MaxHealth;
         }
 
@@ -20,12 +21,12 @@ namespace Coliseum.Domain.Bases
         /// <summary>
         /// Максимальное количество хп
         /// </summary>
-        protected abstract int MaxHealth { get; }
+        protected abstract int MaxHealth { get; set; }
 
         /// <summary>
         /// Атака бойца
         /// </summary>
-        protected abstract IDamage Damage { get; set; }
+        protected abstract BaseDamage Damage { get; set; }
 
         /// <summary>
         /// Защита от физических атак
@@ -37,11 +38,6 @@ namespace Coliseum.Domain.Bases
         /// </summary>
         protected abstract int MagicalDefense { get; }
 
-
-        /// <summary>
-        /// При реализации данного метода следует создать статическую переменную которая будет отвечать за количество созданных экземпляров бойцов
-        /// </summary>
-        /// <returns></returns>
         public abstract object Clone();
 
         /// <summary>
@@ -66,7 +62,7 @@ namespace Coliseum.Domain.Bases
         /// <summary>
         /// Интервал атак в миллисекундах
         /// </summary>
-        public int FireRate { get; protected set; }
+        public int FireRate { get; protected set; } = 1000;
 
         /// <summary>
         /// Дата последней атаки
