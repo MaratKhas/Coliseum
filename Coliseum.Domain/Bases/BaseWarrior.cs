@@ -1,9 +1,9 @@
 ﻿using Coliseum.BuildingBlocks.Domain.Damages.Interfaces;
 using Coliseum.BuildingBlocks.Domain.Enums;
 using Coliseum.BuildingBlocks.Domain.Ultimates;
-using Coliseum.Domain.Events.BattleEvents;
+using Coliseum.Modules.Coliseums.Domain.Events.BattleEvents;
 
-namespace Coliseum.Domain.Bases
+namespace Coliseum.Modules.Coliseums.Domain.Bases
 {
     public abstract class BaseWarrior : Entity, IDamageable
     {

@@ -1,7 +1,7 @@
 ﻿using Coliseum.BuildingBlocks.Domain.Enums;
-using Coliseum.Domain.Bases;
+using Coliseum.Modules.Coliseums.Domain.Bases;
 
-namespace Coliseum.Domain.Damages
+namespace Coliseum.Modules.Coliseums.Domain.Damages
 {
     public class PhysicalDamage : BaseDamage
     {

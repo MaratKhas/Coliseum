@@ -1,7 +1,7 @@
 ﻿using Coliseum.BuildingBlocks.Domain.Damages.Interfaces;
-using Coliseum.Domain.Bases;
+using Coliseum.Modules.Coliseums.Domain.Bases;
 
-namespace Coliseum.Domain.Events.BattleEvents
+namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
 {
     public class AttackEvent : BaseBattleEvent
     {

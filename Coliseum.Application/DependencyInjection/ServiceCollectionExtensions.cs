@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Coliseum.Modules.Coliseums.Application
+namespace Coliseum.Modules.Coliseums.Application.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {

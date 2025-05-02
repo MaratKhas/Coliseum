@@ -1,8 +1,8 @@
-﻿using Coliseum.Domain.Events.BattleEvents;
+﻿using Coliseum.Modules.Coliseums.Domain.Events.BattleEvents;
 using MediatR;
 using System.Diagnostics;
 
-namespace Coliseum.Application.Battle.EventHandlers
+namespace Coliseum.Modules.Coliseums.Application.Battle.EventHandlers
 {
     public class AttackEventHandler : INotificationHandler<AttackEvent>
     {

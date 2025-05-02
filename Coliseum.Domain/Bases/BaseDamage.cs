@@ -1,7 +1,7 @@
 ﻿using Coliseum.BuildingBlocks.Domain.Damages.Interfaces;
 using Coliseum.BuildingBlocks.Domain.Enums;
 
-namespace Coliseum.Domain.Bases
+namespace Coliseum.Modules.Coliseums.Domain.Bases
 {
     public abstract class BaseDamage : IDamage
     {

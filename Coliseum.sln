@@ -16,11 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{5C07
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Coliseums", "Coliseums", "{2F1D50AE-B776-481E-9888-7FBADDAAD3F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Application", "Coliseum.Application\Coliseum.Application.csproj", "{2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Modules.Coliseums.Application", "Coliseum.Application\Coliseum.Modules.Coliseums.Application.csproj", "{2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Domain", "Coliseum.Domain\Coliseum.Domain.csproj", "{AA0C7608-5EDC-4A92-B4F1-8BBC5FDD9E6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Modules.Coliseums.Domain", "Coliseum.Domain\Coliseum.Modules.Coliseums.Domain.csproj", "{AA0C7608-5EDC-4A92-B4F1-8BBC5FDD9E6B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12E79DFC-3DCB-4AF4-9118-A8E9ADC8AA86} = {12E79DFC-3DCB-4AF4-9118-A8E9ADC8AA86}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Infrastructure", "Coliseum.Infrastructure\Coliseum.Infrastructure.csproj", "{6695699C-909C-4F55-B887-D85F3B86DAF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Modules.Coliseums.Infrastructure", "Coliseum.Infrastructure\Coliseum.Modules.Coliseums.Infrastructure.csproj", "{6695699C-909C-4F55-B887-D85F3B86DAF4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3} = {2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3}
 	EndProjectSection

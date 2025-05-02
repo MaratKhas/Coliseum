@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Coliseum.BuildingBlocks.Domain\Coliseum.BuildingBlocks.Domain.csproj" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Coliseum.Domain\Coliseum.Modules.Coliseums.Domain.csproj" />
   </ItemGroup>
 
 </Project>

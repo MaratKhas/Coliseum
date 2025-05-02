@@ -1,7 +1,7 @@
-﻿using Coliseum.Domain.Bases;
-using Coliseum.Domain.Damages;
+﻿using Coliseum.Modules.Coliseums.Domain.Bases;
+using Coliseum.Modules.Coliseums.Domain.Damages;
 
-namespace Coliseum.Domain.Warriors
+namespace Coliseum.Modules.Coliseums.Domain.Warriors
 {
     public class Gladiator : BaseWarrior
     {

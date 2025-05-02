@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Coliseum.Application.Coliseums.Commands.CreateCommand
+namespace Coliseum.Modules.Coliseums.Application.Coliseums.Commands.CreateCommand
 {
     public record CreateColiseumCommand : IRequest<Guid>;
 

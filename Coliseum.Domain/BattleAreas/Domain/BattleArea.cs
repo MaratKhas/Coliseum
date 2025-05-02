@@ -1,8 +1,9 @@
 ﻿using Coliseum.BuildingBlocks.Domain.Enums;
-using Coliseum.Domain.Bases;
-using Coliseum.Domain.Events.BattleEvents;
+using Coliseum.Modules.Coliseums.Domain.Bases;
+using Coliseum.Modules.Coliseums.Domain.BattleEvents;
+using Coliseum.Modules.Coliseums.Domain.Events.BattleEvents;
 
-namespace Modules.Coliseums.Domain.Coliseums.Domain
+namespace Coliseum.Modules.Coliseums.Domain.BattleAreas.Domain
 {
     public class BattleArea : Entity
     {

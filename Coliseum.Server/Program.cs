@@ -1,4 +1,4 @@
-using Coliseum.Modules.Coliseums.Application;
+using Coliseum.Modules.Coliseums.Application.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

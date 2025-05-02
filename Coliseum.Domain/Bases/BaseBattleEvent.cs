@@ -1,6 +1,6 @@
 ﻿using Coliseum.BuildingBlocks.Domain;
 
-namespace Coliseum.Domain.Bases
+namespace Coliseum.Modules.Coliseums.Domain.Bases
 {
     public abstract class BaseBattleEvent : IDomainEvent
     {
