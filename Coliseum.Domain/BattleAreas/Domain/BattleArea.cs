@@ -45,8 +45,7 @@ namespace Coliseum.Modules.Coliseums.Domain.BattleAreas.Domain
 
         public async Task StartBattleAsync(CancellationToken cancellationToken)
         {
-            var battleId = Guid.NewGuid();
-            AddDomainEvent(new BattleStartedEvent(battleId, DateTime.UtcNow));
+            AddDomainEvent(new BattleStartedEvent(Id, DateTime.UtcNow));
 
             var battleLog = new List<string>();
             var battleTasks = new List<Task>();
@@ -67,7 +66,7 @@ namespace Coliseum.Modules.Coliseums.Domain.BattleAreas.Domain
             var survivors = (winningTeam == "TeamA" ? _leftWarriors : _rightWarriors)
                 .Where(w => w.IsAlive).ToList();
 
-            AddDomainEvent(new BattleEndedEvent(battleId, DateTime.UtcNow));
+            AddDomainEvent(new BattleEndedEvent(Id, DateTime.UtcNow));
         }
 
         private async Task WarriorBattleLoop(BaseWarrior warrior, IReadOnlyCollection<BaseWarrior> enemies, IReadOnlyCollection<string> battleLog, CancellationToken cancellationToken)

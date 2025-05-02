@@ -7,11 +7,14 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 {
     public abstract class BaseWarrior : Entity, IDamageable
     {
-        public BaseWarrior(int maxHealth)
+        public BaseWarrior(int maxHealth, Guid battleId)
         {
             MaxHealth = maxHealth;
             _health = MaxHealth;
+            BattleId = battleId;
         }
+
+        public Guid BattleId { get; private set; }
 
         /// <summary>
         /// Имя бойца 
@@ -29,14 +32,14 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
         protected abstract BaseDamage Damage { get; set; }
 
         /// <summary>
-        /// Защита от физических атак
+        /// Защита от физических атак число от 0 до 1
         /// </summary>
-        protected abstract int PhysicalDefense { get; }
+        protected abstract double PhysicalDefense { get; }
 
         /// <summary>
-        /// Защита от магических атак
+        /// Защита от магических атак число от 0 до 1
         /// </summary>
-        protected abstract int MagicalDefense { get; }
+        protected abstract double MagicalDefense { get; }
 
         public abstract object Clone();
 
@@ -83,7 +86,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
             var healing = Math.Min(_health + heal, MaxHealth - _health);
             _health += healing;
 
-            AddDomainEvent(new HealEvent(Id, healing));
+            AddDomainEvent(new HealEvent(BattleId, Id, healing));
         }
 
         /// <summary>
@@ -97,7 +100,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 
             opponent.GetDamage(Damage);
 
-            AddDomainEvent(new AttackEvent(Id, opponent.Id, Damage));
+            AddDomainEvent(new AttackEvent(BattleId, Id, opponent.Id, Damage));
 
             if (this is IHaveAttackUltimate<IUltimate> ultimate)
             {
@@ -119,10 +122,10 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
             switch (damage.DamageType)
             {
                 case DamageTypeEnum.Physical:
-                    _health -= damageValue - PhysicalDefense;
+                    _health -= damageValue - (int)(damageValue * PhysicalDefense);
                     break;
                 case DamageTypeEnum.Magical:
-                    _health -= damageValue - MagicalDefense;
+                    _health -= damageValue - (int)(MagicalDefense * MagicalDefense);
                     break;
                 case DamageTypeEnum.Clear:
                     _health -= damageValue;
@@ -132,10 +135,12 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
                     throw new Exception("Данный тип демеджа не существует в системе, пожалуйста ознакомьтесь с файлом DamageTypeEnum.cs");
             }
 
+            AddDomainEvent(new DamageTakenEvent(BattleId, Id, damageValue, damage.DamageType));
+
             if (_health <= 0)
             {
                 _health = 0;
-                AddDomainEvent(new DefeatEvent(Id));
+                AddDomainEvent(new DefeatEvent(BattleId, Id));
             }
             else if (this is IHaveHealingUltimate<IUltimate> healingUltimate &&
                     _health < MaxHealth * 0.3)

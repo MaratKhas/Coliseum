@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Coliseum.Modules.Coliseums.Infrastructure.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace Coliseum.Modules.Coliseums.Application.DependencyInjection
@@ -11,6 +12,8 @@ namespace Coliseum.Modules.Coliseums.Application.DependencyInjection
             {
                 options.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
+
+            services.AddColiseumInfrastructure();
 
             return services;
         }

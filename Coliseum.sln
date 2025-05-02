@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Modules.Coliseums.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum.Modules.Coliseums.Infrastructure", "Coliseum.Infrastructure\Coliseum.Modules.Coliseums.Infrastructure.csproj", "{6695699C-909C-4F55-B887-D85F3B86DAF4}"
 	ProjectSection(ProjectDependencies) = postProject
-		{2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3} = {2C504872-2DDF-4EB1-9A91-0ABA5B34DBA3}
+		{12E79DFC-3DCB-4AF4-9118-A8E9ADC8AA86} = {12E79DFC-3DCB-4AF4-9118-A8E9ADC8AA86}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{026F9C1C-4A72-4A46-893E-EA158795D2B5}"

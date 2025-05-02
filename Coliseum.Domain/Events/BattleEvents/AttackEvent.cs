@@ -5,7 +5,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
 {
     public class AttackEvent : BaseBattleEvent
     {
-        public AttackEvent(Guid attackerId, Guid targetId, IDamage damage)
+        public AttackEvent(Guid battleId, Guid attackerId, Guid targetId, IDamage damage) : base(battleId)
         {
             AttackerId = attackerId;
             TargetId = targetId;

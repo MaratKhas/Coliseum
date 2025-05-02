@@ -14,11 +14,18 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 
         public abstract DamageTypeEnum DamageType { get; }
 
-        public abstract short SpreadDamage { get; }
+        public abstract double SpreadDamage { get; }
 
         public int GetDamageValue()
         {
-            return DamageValue * SpreadDamage;
+            double minMultiplier = 1.0 - SpreadDamage;
+            double maxMultiplier = 1.0 + SpreadDamage;
+
+            var damageMultiplier = Random.Shared.NextDouble() * (maxMultiplier - minMultiplier) + minMultiplier;
+
+            var result = (int)(DamageValue * damageMultiplier);
+
+            return Math.Max(1, result);
         }
     }
 }

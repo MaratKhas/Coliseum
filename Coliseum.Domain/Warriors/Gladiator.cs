@@ -5,7 +5,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Warriors
 {
     public class Gladiator : BaseWarrior
     {
-        protected Gladiator(string name, int damage, int maxHealth) : base(maxHealth)
+        protected Gladiator(Guid battleId, string name, int damage, int maxHealth) : base(maxHealth, battleId)
         {
             Name = name;
             Damage = new PhysicalDamage(damage);
@@ -15,20 +15,20 @@ namespace Coliseum.Modules.Coliseums.Domain.Warriors
 
         protected override BaseDamage Damage { get; set; }
 
-        protected override int PhysicalDefense => 80;
+        protected override double PhysicalDefense => 0.8;
 
-        protected override int MagicalDefense => 10;
+        protected override double MagicalDefense => 0.1;
 
         public override object Clone()
         {
-            return new Gladiator(Name, Damage.DamageValue, MaxHealth);
+            return new Gladiator(BattleId, Name, Damage.DamageValue, MaxHealth);
         }
 
-        public static Gladiator Create(string name, int damage, int maxHealth)
+        public static Gladiator Create(Guid battleId, string name, int damage, int maxHealth)
         {
             //todo : Проверки
 
-            return new Gladiator(name, damage, maxHealth);
+            return new Gladiator(battleId, name, damage, maxHealth);
         }
     }
 }

@@ -1,13 +1,15 @@
 ﻿using Coliseum.Modules.Coliseums.Domain.Events.BattleEvents;
 using MediatR;
+using System.Diagnostics;
 
 namespace Coliseum.Modules.Coliseums.Application.Battle.EventHandlers
 {
-    internal class DamageTakenEventHandler : INotificationHandler<DamageTakenEvent>
+    public class DamageTakenEventHandler : INotificationHandler<DamageTakenEvent>
     {
-        public Task Handle(DamageTakenEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(DamageTakenEvent notification, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var message = $"защищающийся {notification.WarriorId} получает урон {notification.DamageAmount}";
+            Debug.WriteLine(message); 
         }
     }
 }

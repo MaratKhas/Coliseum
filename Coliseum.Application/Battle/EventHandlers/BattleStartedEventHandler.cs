@@ -1,13 +1,15 @@
 ﻿using Coliseum.Modules.Coliseums.Domain.Events.BattleEvents;
 using MediatR;
+using System.Diagnostics;
 
 namespace Coliseum.Modules.Coliseums.Application.Battle.EventHandlers
 {
     internal class BattleStartedEventHandler : INotificationHandler<BattleStartedEvent>
     {
-        public Task Handle(BattleStartedEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(BattleStartedEvent notification, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var message = $"Битва {notification.BattleId} начинается {notification.BattleStartTime}";
+            Debug.WriteLine(message);
         }
     }
 }

@@ -11,6 +11,6 @@ namespace Coliseum.Modules.Coliseums.Domain.Damages
 
         public override DamageTypeEnum DamageType => DamageTypeEnum.Physical;
 
-        public override short SpreadDamage => 20;
+        public override double SpreadDamage => 0.2;
     }
 }

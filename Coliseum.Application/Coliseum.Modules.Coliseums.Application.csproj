@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Coliseum.Domain\Coliseum.Modules.Coliseums.Domain.csproj" />
+    <ProjectReference Include="..\Coliseum.Infrastructure\Coliseum.Modules.Coliseums.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

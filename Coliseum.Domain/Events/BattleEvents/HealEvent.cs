@@ -4,7 +4,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
 {
     public class HealEvent : BaseBattleEvent
     {
-        public HealEvent(Guid targetId, int heal)
+        public HealEvent(Guid battleId, Guid targetId, int heal) : base(battleId)
         {
             TargetId = targetId;
             Heal = heal;
