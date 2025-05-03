@@ -2,9 +2,9 @@
 
 namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
 {
-    public class UseUltimateEvent : BaseBattleEvent
+    public class UsedUltimateEvent : BaseBattleEvent
     {
-        public UseUltimateEvent(Guid battleId) : base(battleId)
+        public UsedUltimateEvent(Guid battleId) : base(battleId)
         {
 
         }

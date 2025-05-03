@@ -4,9 +4,9 @@ using System.Diagnostics;
 
 namespace Coliseum.Modules.Coliseums.Application.Battle.EventHandlers
 {
-    public class AttackEventHandler : INotificationHandler<AttackEvent>
+    public class AttackedEventHandler : INotificationHandler<AttackedEvent>
     {
-        public async Task Handle(AttackEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(AttackedEvent notification, CancellationToken cancellationToken)
         {
             var message = $"атакующий {notification.AttackerId} атакует {notification.TargetId} дата {notification.EventDate}";
             Debug.WriteLine(message);

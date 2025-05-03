@@ -3,9 +3,9 @@ using MediatR;
 
 namespace Coliseum.Modules.Coliseums.Application.Battle.EventHandlers
 {
-    internal class HealEventHandler : INotificationHandler<HealEvent>
+    internal class DefeatedEventHandler : INotificationHandler<DefeatedEvent>
     {
-        public Task Handle(HealEvent notification, CancellationToken cancellationToken)
+        public Task Handle(DefeatedEvent notification, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

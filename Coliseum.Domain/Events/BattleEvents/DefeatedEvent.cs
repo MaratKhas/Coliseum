@@ -2,11 +2,11 @@
 
 namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
 {
-    public class DefeatEvent : BaseBattleEvent
+    public class DefeatedEvent : BaseBattleEvent
     {
         public Guid WarriorId { get; set; }
 
-        public DefeatEvent(Guid battleId, Guid warriorId) : base(battleId)
+        public DefeatedEvent(Guid battleId, Guid warriorId) : base(battleId)
         {
             WarriorId = warriorId;
         }

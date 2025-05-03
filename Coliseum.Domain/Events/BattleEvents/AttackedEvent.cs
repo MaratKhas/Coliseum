@@ -3,9 +3,9 @@ using Coliseum.Modules.Coliseums.Domain.Bases;
 
 namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
 {
-    public class AttackEvent : BaseBattleEvent
+    public class AttackedEvent : BaseBattleEvent
     {
-        public AttackEvent(Guid battleId, Guid attackerId, Guid targetId, IDamage damage) : base(battleId)
+        public AttackedEvent(Guid battleId, Guid attackerId, Guid targetId, IDamage damage) : base(battleId)
         {
             AttackerId = attackerId;
             TargetId = targetId;

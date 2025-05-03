@@ -86,7 +86,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
             var healing = Math.Min(_health + heal, MaxHealth - _health);
             _health += healing;
 
-            AddDomainEvent(new HealEvent(BattleId, Id, healing));
+            AddDomainEvent(new HealedEvent(BattleId, Id, healing));
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 
             opponent.GetDamage(Damage);
 
-            AddDomainEvent(new AttackEvent(BattleId, Id, opponent.Id, Damage));
+            AddDomainEvent(new AttackedEvent(BattleId, Id, opponent.Id, Damage));
 
             if (this is IHaveAttackUltimate<IUltimate> ultimate)
             {
@@ -140,7 +140,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
             if (_health <= 0)
             {
                 _health = 0;
-                AddDomainEvent(new DefeatEvent(BattleId, Id));
+                AddDomainEvent(new DefeatedEvent(BattleId, Id));
             }
             else if (this is IHaveHealingUltimate<IUltimate> healingUltimate &&
                     _health < MaxHealth * 0.3)

@@ -13,7 +13,6 @@ namespace Coliseum.Modules.Coliseums.Application.Coliseums.Commands.TestCommand
         public async Task Handle(TestBattleCommand request, CancellationToken cancellationToken)
         {
             var coliseum = BattleArea.Create();
-            // Entity.ConfigureObserver()
 
             var gladiators = new List<BaseWarrior>() {
                 Gladiator.Create(coliseum.Id, "Гладиатор 1",30, 400),
