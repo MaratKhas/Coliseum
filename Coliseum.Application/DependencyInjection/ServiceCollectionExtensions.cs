@@ -13,6 +13,8 @@ namespace Coliseum.Modules.Coliseums.Application.DependencyInjection
                 options.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
 
+            services.AddSignalRCore();
+
             services.AddColiseumInfrastructure();
 
             return services;

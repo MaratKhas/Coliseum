@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Coliseum.BuildingBlocks.Domain\Coliseum.BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="..\Coliseum.BuildingBlocks.Infrastructure\Coliseum.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Coliseum.Domain\Coliseum.Modules.Coliseums.Domain.csproj" />
   </ItemGroup>
 
 </Project>
