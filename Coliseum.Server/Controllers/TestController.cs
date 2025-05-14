@@ -11,7 +11,7 @@ namespace Coliseum.WebApi.Controllers
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
         [HttpGet("test")]
-        public async Task Test( CancellationToken cancellationToken)
+        public async Task Test(CancellationToken cancellationToken)
         {
             await Mediator.Send(new TestBattleCommand());
         }
