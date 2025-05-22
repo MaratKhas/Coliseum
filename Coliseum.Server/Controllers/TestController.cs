@@ -5,11 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Coliseum.WebApi.Controllers
 {
     [ApiController]
-    public class TestController : ControllerBase
+    public class TestController : BaseController
     {
-        private IMediator _mediator;
-        protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
-
         [HttpGet("test")]
         public async Task Test(CancellationToken cancellationToken)
         {
