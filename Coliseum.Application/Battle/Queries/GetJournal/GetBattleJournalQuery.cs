@@ -11,12 +11,13 @@ namespace Coliseum.Modules.Coliseums.Application.Battle.Queries.GetJournal
         public Task<BattleJournalDto> Handle(GetBattleJournalQuery request, CancellationToken cancellationToken)
         {
             var result = new BattleJournalDto();
-            var test = repository.GetBattles();
-            foreach (var battles in test)
+            var battles = repository.GetBattles();
+            foreach (var battle in battles)
             {
                 result.Items.Add(new BattleJournalItemDto()
                 {
-                    Id = battles.Id,
+                    Id = battle.Id,
+                    Name = battle.Name,
                 });
             }
 

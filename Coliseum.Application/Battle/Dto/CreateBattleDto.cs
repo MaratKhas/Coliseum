@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Coliseum.Modules.Coliseums.Application.Battle.Dto
 {
-    public class BattleJournalItemDto
+    public class CreateBattleDto
     {
-        public Guid Id { get; set; }
-
         public string Name { get; set; }
     }
 }

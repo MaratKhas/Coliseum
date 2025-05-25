@@ -1,23 +1,25 @@
 ﻿using Coliseum.BuildingBlocks.Domain;
 using Coliseum.Modules.Coliseums.Domain.Bases;
 using Coliseum.Modules.Coliseums.Domain.BattleAreas.Domain;
-using Coliseum.Modules.Coliseums.Domain.Warriors;
+using Coliseum.Modules.Coliseums.Domain.Warriors.Gladiators;
+using Coliseum.Modules.Coliseums.Domain.Warriors.Interfaces;
 using MediatR;
+using Coliseum.BuildingBlocks.Domain.Enums;
 
 namespace Coliseum.Modules.Coliseums.Application.Coliseums.Commands.TestCommand
 {
     public record TestBattleCommand : IRequest;
 
-    public class TestBattleCommandHandler(IDomainEventObserver observer) : IRequestHandler<TestBattleCommand>
+    public class TestBattleCommandHandler(IDomainEventObserver observer, IWarriorFactory factory) : IRequestHandler<TestBattleCommand>
     {
         public async Task Handle(TestBattleCommand request, CancellationToken cancellationToken)
         {
-            var coliseum = BattleArea.Create();
+            var coliseum = BattleArea.Create("Тест");
 
             var gladiators = new List<BaseWarrior>() {
-                Gladiator.Create(coliseum.Id, "Гладиатор 1",30, 400),
-                Gladiator.Create(coliseum.Id,"Гладиатор 2",40, 500),
-                Gladiator.Create(coliseum.Id,"Гладиатор 3",50, 600),
+                factory.CreateWarrior(WarriorType.Gladiator ,"Гладиатор 1",30, 400),
+                factory.CreateWarrior(WarriorType.Gladiator ,"Гладиатор 2",40, 500),
+                factory.CreateWarrior(WarriorType.Gladiator ,"Гладиатор 3",50, 600)
             };
 
             coliseum.AddWarriorsToLeftWarriors(gladiators);
@@ -26,9 +28,9 @@ namespace Coliseum.Modules.Coliseums.Application.Coliseums.Commands.TestCommand
 
 
             gladiators = new List<BaseWarrior>() {
-                Gladiator.Create(coliseum.Id,"Гладиатор 4",40, 300),
-                Gladiator.Create(coliseum.Id,"Гладиатор 5",30, 400),
-                Gladiator.Create(coliseum.Id,"Гладиатор 6",50, 700),
+                factory.CreateWarrior(WarriorType.Gladiator ,"Гладиатор 4",40, 300),
+                factory.CreateWarrior(WarriorType.Gladiator ,"Гладиатор 5",30, 400),
+                factory.CreateWarrior(WarriorType.Gladiator ,"Гладиатор 6",50, 700)
             };
 
             coliseum.AddWarriorsToRightWarriors(gladiators);

@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import {  configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
 import { api } from './api/api';
 
@@ -8,14 +8,12 @@ const logger = createLogger({
 
 export const store = configureStore({
     reducer: {
-        // Remove the combineReducers wrapper - configureStore already combines reducers
         [api.reducerPath]: api.reducer,
-        // Add other reducers here if needed
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
-            .concat(api.middleware)  // Add RTK Query middleware
-            .concat(logger),        // Add logger middleware
+            .concat(api.middleware)  
+            .concat(logger),      
 });
 
 export type RootState = ReturnType<typeof store.getState>;

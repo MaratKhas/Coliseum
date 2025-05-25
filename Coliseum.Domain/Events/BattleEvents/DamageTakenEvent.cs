@@ -7,9 +7,9 @@ namespace Coliseum.Modules.Coliseums.Domain.Events.BattleEvents
     {
         public Guid WarriorId { get; }
         public int DamageAmount { get; }
-        public DamageTypeEnum DamageType { get; }
+        public DamageType DamageType { get; }
 
-        public DamageTakenEvent(Guid battleId, Guid warriorId, int damageAmount, DamageTypeEnum damageType) : base(battleId)
+        public DamageTakenEvent(Guid battleId, Guid warriorId, int damageAmount, DamageType damageType) : base(battleId)
         {
             WarriorId = warriorId;
             DamageAmount = damageAmount;

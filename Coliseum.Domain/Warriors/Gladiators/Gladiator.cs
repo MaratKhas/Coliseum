@@ -1,11 +1,11 @@
 ﻿using Coliseum.Modules.Coliseums.Domain.Bases;
 using Coliseum.Modules.Coliseums.Domain.Damages;
 
-namespace Coliseum.Modules.Coliseums.Domain.Warriors
+namespace Coliseum.Modules.Coliseums.Domain.Warriors.Gladiators
 {
     public class Gladiator : BaseWarrior
     {
-        protected Gladiator(Guid battleId, string name, int damage, int maxHealth) : base(maxHealth, battleId)
+        protected Gladiator(string name, int damage, int maxHealth) : base(maxHealth)
         {
             Name = name;
             Damage = new PhysicalDamage(damage);
@@ -21,14 +21,14 @@ namespace Coliseum.Modules.Coliseums.Domain.Warriors
 
         public override object Clone()
         {
-            return new Gladiator(BattleId, Name, Damage.DamageValue, MaxHealth);
+            return new Gladiator(Name, Damage.DamageValue, MaxHealth);
         }
 
-        public static Gladiator Create(Guid battleId, string name, int damage, int maxHealth)
+        public static Gladiator Create(string name, int damage, int maxHealth)
         {
             //todo : Проверки
 
-            return new Gladiator(battleId, name, damage, maxHealth);
+            return new Gladiator(name, damage, maxHealth);
         }
     }
 }

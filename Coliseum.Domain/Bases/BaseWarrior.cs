@@ -7,14 +7,18 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 {
     public abstract class BaseWarrior : Entity, IDamageable
     {
-        public BaseWarrior(int maxHealth, Guid battleId)
+        public BaseWarrior(int maxHealth)
         {
             MaxHealth = maxHealth;
             _health = MaxHealth;
-            BattleId = battleId;
         }
 
-        public Guid BattleId { get; private set; }
+        protected Guid BattleId { get; private set; }
+
+        public void SetBattleId(Guid idBattle)
+        {
+            BattleId = idBattle;
+        }
 
         /// <summary>
         /// Имя бойца 
@@ -121,13 +125,13 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 
             switch (damage.DamageType)
             {
-                case DamageTypeEnum.Physical:
+                case DamageType.Physical:
                     _health -= damageValue - (int)(damageValue * PhysicalDefense);
                     break;
-                case DamageTypeEnum.Magical:
+                case DamageType.Magical:
                     _health -= damageValue - (int)(MagicalDefense * MagicalDefense);
                     break;
-                case DamageTypeEnum.Clear:
+                case DamageType.Clear:
                     _health -= damageValue;
                     break;
 

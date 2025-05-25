@@ -4,7 +4,7 @@ namespace Coliseum.BuildingBlocks.Domain.Damages.Interfaces
 {
     public interface IDamage
     {
-        DamageTypeEnum DamageType { get; }
+        DamageType DamageType { get; }
 
         int GetDamageValue();
     }

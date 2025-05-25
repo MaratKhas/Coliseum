@@ -13,18 +13,23 @@ namespace Coliseum.Modules.Coliseums.Domain.BattleAreas.Domain
 
         private BattleState _state = BattleState.NotStarted;
 
+        private string _name;
+
+        public string Name { get { return _name; } }
+
         public IReadOnlyList<BaseWarrior> LeftWarriors => _leftWarriors.AsReadOnly();
         public IReadOnlyList<BaseWarrior> RightWarriors => _rightWarriors.AsReadOnly();
         public BattleState State => _state;
 
-        protected BattleArea()
+        protected BattleArea(string name)
         {
             Id = Guid.NewGuid();
+            _name = name;
         }
 
-        public static BattleArea Create()
+        public static BattleArea Create(string name)
         {
-            return new BattleArea();
+            return new BattleArea(name);
         }
 
         public void AddWarriorsToLeftWarriors(IEnumerable<BaseWarrior> warriors)

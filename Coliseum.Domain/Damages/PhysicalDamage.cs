@@ -9,7 +9,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Damages
         {
         }
 
-        public override DamageTypeEnum DamageType => DamageTypeEnum.Physical;
+        public override DamageType DamageType => DamageType.Physical;
 
         public override double SpreadDamage => 0.2;
     }

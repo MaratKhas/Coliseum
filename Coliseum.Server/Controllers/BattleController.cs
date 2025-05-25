@@ -1,4 +1,5 @@
-﻿using Coliseum.Modules.Coliseums.Application.Battle.Queries.GetJournal;
+﻿using Coliseum.Modules.Coliseums.Application.Battle.Dto;
+using Coliseum.Modules.Coliseums.Application.Battle.Queries.GetJournal;
 using Coliseum.Modules.Coliseums.Application.Coliseums.Commands.CreateCommand;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,9 @@ namespace Coliseum.WebApi.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<ActionResult> Post()
+        public async Task<ActionResult> Post([FromBody] CreateBattleDto dto)
         {
-            var result = await Mediator.Send(new CreateBattleCommand());
+            var result = await Mediator.Send(new CreateBattleCommand(dto));
             return Ok(result);
         }
     }

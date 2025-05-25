@@ -8,7 +8,7 @@ namespace Coliseum.Modules.Coliseums.Application.Battle.EventHandlers
     {
         public async Task Handle(DamageTakenEvent notification, CancellationToken cancellationToken)
         {
-            var message = $"защищающийся {notification.WarriorId} получает урон {notification.DamageAmount}, тип урона ";
+            var message = $"защищающийся {notification.WarriorId} получает урон {notification.DamageAmount}, тип урона {notification.DamageType}";
             Debug.WriteLine(message); 
         }
     }

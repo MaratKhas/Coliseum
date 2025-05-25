@@ -6,3 +6,7 @@ export interface IBattleJournalDto {
 export interface IBattleJournalItemDto {
     id: string
 }
+
+export interface IBattleCreateDto {
+    name: string
+}

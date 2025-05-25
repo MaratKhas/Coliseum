@@ -12,7 +12,7 @@ namespace Coliseum.Modules.Coliseums.Domain.Bases
 
         public int DamageValue { get; set; }
 
-        public abstract DamageTypeEnum DamageType { get; }
+        public abstract DamageType DamageType { get; }
 
         public abstract double SpreadDamage { get; }
 
