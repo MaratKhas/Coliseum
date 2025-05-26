@@ -1,5 +1,6 @@
 import { Button, Input, Modal } from "antd";
-import { useNavigate } from "react-router-dom";
+import { EditOutlined } from "@ant-design/icons"
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
     useCreateBattleMutation,
@@ -96,6 +97,13 @@ export function BattleJournalPage() {
                         {journalData.items.map(battle => (
                             <li key={battle.id}>
                                 Битва #{battle.id} - {battle.status} {battle.name && `(${battle.name})`}
+                                <Link to={`./${battle.id}` }>
+                                    <Button
+                                        type="link"
+                                        icon={<EditOutlined />}
+                                        size="small"
+                                    />
+                                </Link >
                             </li>
                         ))}
                     </ul>

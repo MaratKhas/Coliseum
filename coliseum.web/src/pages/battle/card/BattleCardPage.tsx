@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+
 export function BattleCardPage() {
-  return (
-      <p>Hello BattleCardPage!</p>
+    const { id } = useParams()
+    return (
+        <p>{id}</p>
   );
 }
